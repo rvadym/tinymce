@@ -10,7 +10,7 @@ namespace x_tinymce;
 class Controller_TinyMCE extends \AbstractController {
     function init(){
    		parent::init();
-        if (!($this->owner instanceof \Form)) throw $this->exception('This Controller must be connected to Form only');
+        //if (!($this->owner instanceof \Form)) throw $this->exception('This Controller must be connected to Form only');
 
         $this->owner->TinyMCE = $this;
 
@@ -23,7 +23,7 @@ class Controller_TinyMCE extends \AbstractController {
             'template'=>'templates',
 		))->setParent($l);
 
-        $this->owner->api->jquery->addStaticInclude( $l.'tiny_mce/tiny_mce_dev' );
+        $this->owner->api->jquery->addStaticInclude( 'tiny_mce/tiny_mce_dev' );
     }
 
     /*
@@ -36,7 +36,7 @@ class Controller_TinyMCE extends \AbstractController {
     private $language = 'en';
     private $caption = false;
     private $height = 500;
-    private $width = 750;
+    private $width = null;
     function addEditorTo(\Form_Field_Text $field, $editor_config=array()) {
         $this->field = $field;
         $this->configureEditor($editor_config);
@@ -46,7 +46,9 @@ class Controller_TinyMCE extends \AbstractController {
                     mode : "exact",
                     elements : "'.$this->field->name.'",
                     height : "'.$this->height.'",
-                    width : "'.$this->width.'",
+                    '.($this->width?
+                    'width : "'.$this->width.'",'
+                    :'').'
                     theme : "'.$this->editor_theme.'",
                     language : "'.$this->language.'",
                     plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
