@@ -63,6 +63,8 @@ class Controller_TinyMCE extends \AbstractController {
                     theme_advanced_toolbar_align : "left",
                     theme_advanced_statusbar_location : "bottom",
                     theme_advanced_resizing : true,
+		    extended_valid_elements: "iframe[class|src|frameborder=0|alt|title|width|height|align|name]",
+
 
                     setup : function(ed) {
                               ed.onChange.add(function(ed, l) {
