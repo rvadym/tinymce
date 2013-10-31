@@ -1,5 +1,5 @@
 {
-    "name": "rvadym\x_tinymce",
+    "name": "rvadym\\x_tinymce",
     "type": "library",
     "version": "4.3",
     "keywords": ["addon","framework","atk4","tinymce"],
