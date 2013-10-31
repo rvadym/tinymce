@@ -6,7 +6,7 @@
  * Time: 12:03 PM
  * To change this template use File | Settings | File Templates.
  */
-namespace x_tinymce;
+namespace rvadym\x_tinymce;
 class Controller_TinyMCE extends \AbstractController {
     function init(){
    		parent::init();

@@ -1,0 +1,12 @@
+{
+    "name": "rvadym\x_tinymce",
+    "type": "library",
+    "version": "4.3",
+    "keywords": ["addon","framework","atk4","tinymce"],
+    "homepage": "https://github.com/rvadym/x_tinymce",
+    "source": {
+        "url": "https://github.com/rvadym/x_tinymce.git",
+        "type": "git",
+        "reference": "origin/4.3"
+    }
+}
