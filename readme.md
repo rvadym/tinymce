@@ -1,11 +1,19 @@
 x_tinymce
 =========
 
-tinymce editor for atk4
+### Composer
 
-```
-    $this->add('x_tinymce/Controller_TinyMCE');
+
+    "require": {
+        "rvadym/x_tinymce": "dev-master"
+    }
+
+
+### Usage
+
+
+    $this->add('rvadym/x_tinymce/Controller_TinyMCE');
     $this->TinyMCE->addEditorTo(
         $this->getElement('description'),
         array('theme'=>'simple','height'=>'100'));
-```
+
