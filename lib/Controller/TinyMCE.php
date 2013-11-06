@@ -14,16 +14,27 @@ class Controller_TinyMCE extends \AbstractController {
 
         $this->owner->TinyMCE = $this;
 
+//		// add add-on locations to pathfinder
+//		$l = $this->api->locate('addons',__NAMESPACE__,'location');
+//		$addon_location = $this->api->locate('addons',__NAMESPACE__);
+//		$this->api->pathfinder->addLocation($addon_location,array(
+//			'js'=>'templates/js',
+//			'css'=>'templates/css',
+//           'template'=>'templates',
+//		))->setParent($l);
+		
 		// add add-on locations to pathfinder
 		$l = $this->api->locate('addons',__NAMESPACE__,'location');
 		$addon_location = $this->api->locate('addons',__NAMESPACE__);
-		$this->api->pathfinder->addLocation($addon_location,array(
-			'js'=>'templates/js',
-			'css'=>'templates/css',
+		$this->api->pathfinder->addLocation('public',array(
+			'js'=>'js/'.str_replace('\\','/',__NAMESPACE__).'/js',
+			'css'=>'templates/css/'.str_replace('\\','/',__NAMESPACE__),
             'template'=>'templates',
 		))->setParent($l);
 
-        $this->owner->api->jquery->addStaticInclude( 'tiny_mce/tiny_mce_dev' );
+        $this->owner->api->jquery->addStaticInclude(
+            $this->api->public_location->getURL('js/'.__NAMESPACE__.'/js/tiny_mce/tiny_mce_dev.js')
+        );
     }
 
     /*
