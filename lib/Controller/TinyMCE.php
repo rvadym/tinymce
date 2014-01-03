@@ -24,6 +24,7 @@ class Controller_TinyMCE extends \AbstractController {
 //		))->setParent($l);
 		
 		// add add-on locations to pathfinder
+        /*
 		$l = $this->api->locate('addons',__NAMESPACE__,'location');
 		$addon_location = $this->api->locate('addons',__NAMESPACE__);
 		$this->api->pathfinder->addLocation('public',array(
@@ -31,9 +32,10 @@ class Controller_TinyMCE extends \AbstractController {
 			'css'=>'templates/css/'.str_replace('\\','/',__NAMESPACE__),
             'template'=>'templates',
 		))->setParent($l);
+         */
 
         $this->owner->api->jquery->addStaticInclude(
-            $this->api->public_location->getURL('js/'.__NAMESPACE__.'/js/tiny_mce/tiny_mce_dev.js')
+            $this->api->pathfinder->public_location->getURL('js/'.__NAMESPACE__.'/js/tiny_mce/tiny_mce_dev.js')
         );
     }
 
