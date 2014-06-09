@@ -10,6 +10,6 @@
         "reference": "origin/4.3"
     },
     "autoload": {
-        "psr-0": {"rvadym\\x_tinymce": "lib/"}
+        "psr-0": {"rvadym\\tinymce": "lib/"}
     }
 }

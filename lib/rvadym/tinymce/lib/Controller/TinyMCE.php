@@ -6,34 +6,15 @@
  * Time: 12:03 PM
  * To change this template use File | Settings | File Templates.
  */
-namespace rvadym\x_tinymce;
+namespace rvadym\tinymce;
 class Controller_TinyMCE extends \AbstractController {
     function init(){
    		parent::init();
         //if (!($this->owner instanceof \Form)) throw $this->exception('This Controller must be connected to Form only');
 
         $this->owner->TinyMCE = $this;
-
-//		// add add-on locations to pathfinder
-//		$l = $this->api->locate('addons',__NAMESPACE__,'location');
-//		$addon_location = $this->api->locate('addons',__NAMESPACE__);
-//		$this->api->pathfinder->addLocation($addon_location,array(
-//			'js'=>'templates/js',
-//			'css'=>'templates/css',
-//           'template'=>'templates',
-//		))->setParent($l);
-		
-		// add add-on locations to pathfinder
-		$l = $this->api->locate('addons',__NAMESPACE__,'location');
-		$addon_location = $this->api->locate('addons',__NAMESPACE__);
-		$this->api->pathfinder->addLocation('public',array(
-			'js'=>'js/'.str_replace('\\','/',__NAMESPACE__).'/js',
-			'css'=>'templates/css/'.str_replace('\\','/',__NAMESPACE__),
-            'template'=>'templates',
-		))->setParent($l);
-
-        $this->owner->api->jquery->addStaticInclude(
-            $this->api->public_location->getURL('js/'.__NAMESPACE__.'/js/tiny_mce/tiny_mce_dev.js')
+        $this->owner->app->jquery->addStaticInclude(
+            $this->app->pathfinder->public_location->getURL(__NAMESPACE__.'/js/tiny_mce/tiny_mce_dev.js')
         );
     }
 
