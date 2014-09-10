@@ -1,15 +1,15 @@
 {
-    "name": "rvadym/x_tinymce",
+    "name": "rvadym/tinymce",
     "type": "library",
     "version": "4.3",
     "keywords": ["addon","framework","atk4","tinymce"],
-    "homepage": "https://github.com/rvadym/x_tinymce",
+    "homepage": "https://github.com/rvadym/tinymce",
     "source": {
-        "url": "git@github.com:rvadym/x_tinymce.git",
+        "url": "git@github.com:rvadym/tinymce.git",
         "type": "git",
         "reference": "origin/4.3"
     },
     "autoload": {
-        "psr-0": {"rvadym\\tinymce\\": "lib/"}
+        "psr-0": {"rvadym\\tinymce": "lib/"}
     }
 }
