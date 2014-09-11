@@ -1,11 +1,11 @@
-x_tinymce
+tinymce
 =========
 
 ### Composer
 
 
     "require": {
-        "rvadym/x_tinymce": "dev-master"
+        "rvadym/tinymce": "dev-master"
     }
 
 
@@ -22,13 +22,13 @@ x_tinymce
         cd x_tinymce
 
         # create simlink to addon js files
-        ln -s ../../../../vendor/rvadym/x_tinymce/templates/js/
+        ln -s ../../../../vendor/rvadym/tinymce/templates/js/
 
 
 ### Usage
 
 
-    $this->add('rvadym/x_tinymce/Controller_TinyMCE');
+    $this->add('rvadym/tinymce/Controller_TinyMCE');
     $this->TinyMCE->addEditorTo(
         $this->getElement('description'),
         array('theme'=>'simple','height'=>'100'));
