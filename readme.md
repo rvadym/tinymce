@@ -1,4 +1,4 @@
-x_tinymce
+tinymce
 =========
 
 ### Composer
