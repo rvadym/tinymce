@@ -10,6 +10,8 @@ namespace rvadym\tinymce;
 class Controller_TinyMCE extends \AbstractController {
     function init(){
    		parent::init();
+        $this->add('rvadym\cms\Initiator');
+
         //if (!($this->owner instanceof \Form)) throw $this->exception('This Controller must be connected to Form only');
 
         $this->owner->TinyMCE = $this;
